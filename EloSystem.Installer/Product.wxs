@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+	<?if $(var.Platform)=x64 ?>
+	<?define ProductCode = "{050D3658-566B-4A25-B8FA-99E5A83129E8}"?>
+	<?else?>
+	<?define ProductCode = "{815B56EA-FB69-4215-849E-6276D90B896F}"?>
+	<?endif?>
+	
+	<Product Id="$(var.ProductCode)" 
+			 Name="!(loc.ProductName_x86)" 
+			 Language="1033" 
+			 Version="1.0.0.0" 
+			 Manufacturer="Microsoft" 
+			UpgradeCode="2727ea72-5983-4f8b-b053-2edb97a8d0ce">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="EloSystem.Installer" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="EloSystem.Installer" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+		</ComponentGroup>
+	</Fragment>
+</Wix>
