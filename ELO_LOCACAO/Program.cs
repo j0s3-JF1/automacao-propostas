@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using ELO_LOCACAO.Loading;
 using ELO_LOCACAO.Paginas;
+using ELO_LOCACAO.PopUp;
 
 namespace ELO_LOCACAO
 {
