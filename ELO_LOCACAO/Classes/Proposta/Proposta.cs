@@ -719,6 +719,7 @@ namespace ELO_LOCACAO.Classes.Proposta
                     int anoAtual = DateTime.Now.Year;
 
                     string save = $@"C:\Users\Public\{Proposta}.docx";
+                    //string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
                     ObjDoc.SaveAs2(save);
 
                     ObjDoc.Close();
@@ -904,6 +905,7 @@ namespace ELO_LOCACAO.Classes.Proposta
                     int anoAtual = DateTime.Now.Year;
 
                     string save = $@"C:\Users\Public\{Proposta}.docx";
+                    //string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
                     ObjDoc.SaveAs2(save);
 
                     ObjDoc.Close();

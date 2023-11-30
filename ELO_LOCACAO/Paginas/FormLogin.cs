@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,10 @@ namespace ELO_LOCACAO.Paginas
         public FormLogin()
         {
             InitializeComponent();
+
         }
 
-        private void btn_login_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
             string user, senha;
 
@@ -64,6 +66,41 @@ namespace ELO_LOCACAO.Paginas
                         Application.Exit();
                     }
                 }
+            }
+        }
+
+        private void lbl_Exit_Click(object sender, EventArgs e)
+        {
+            if (fecharFormulario)
+            {
+                // Se a flag estiver definida, apenas feche o formulário
+                fecharFormulario = false; // Redefina a flag
+            }
+            else
+            {
+                // Pergunte ao usuário se ele deseja realmente sair do aplicativo
+                DialogResult resultado = MessageBox.Show("Deseja realmente sair do aplicativo?", "Confirmação de Saída", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Se o usuário clicar em "Sim", encerre a aplicação
+                    Application.Exit();
+                }
+            }
+
+        }
+
+        private void btnSeePass_Click(object sender, EventArgs e)
+        {
+            if (txt_senha.PasswordChar == '*')
+            {
+                txt_senha.PasswordChar = '\0';
+                btnSeePass.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+            }
+            else
+            {
+                txt_senha.PasswordChar = '*';
+                btnSeePass.IconChar = FontAwesome.Sharp.IconChar.Eye;
             }
         }
     }

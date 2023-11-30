@@ -54,35 +54,43 @@ namespace ELO_LOCACAO.Paginas
             }
             else
             {
-                string fabricante, modelo, config, status, familia;
-
-                fabricante = cmb_fabricante.Text;
-                modelo = txt_Modelo.Text;
-                config = txt_Config.Text;
-                status = cmb_Status.Text;
-                familia = txt_Familia.Text;
-
-                int digital_input, digital_output, analog_input, analog_output;
-
-                digital_input = int.Parse(txt_EntradaD.Text);
-                digital_output = int.Parse(txt_SaidaD.Text);
-                analog_input = int.Parse(txt_EntradaA.Text);
-                analog_output = int.Parse(txt_SaidaA.Text);
-
-                if (MessageBox.Show($"Deseja Cadastrar a Placa {modelo}?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                try
                 {
-                    var placa_io = new Cadastrar();
-                    placa_io.Placa_IO(fabricante, modelo, config, status, digital_input, digital_output, analog_input, analog_output, familia, User);
+                    string fabricante, modelo, config, status, familia;
 
-                    cmb_fabricante.Text = string.Empty;
-                    txt_Modelo.Text = string.Empty;
-                    txt_Config.Text = string.Empty;
-                    cmb_Status.Text = string.Empty;
-                    txt_EntradaD.Text = string.Empty;
-                    txt_SaidaD.Text = string.Empty;
-                    txt_EntradaA.Text = string.Empty;
-                    txt_SaidaA.Text = string.Empty;
-                    txt_Familia.Text = string.Empty;
+                    fabricante = cmb_fabricante.Text;
+                    modelo = txt_Modelo.Text;
+                    config = txt_Config.Text;
+                    status = cmb_Status.Text;
+                    familia = txt_Familia.Text;
+
+                    int digital_input, digital_output, analog_input, analog_output;
+
+                    digital_input = int.Parse(txt_EntradaD.Text);
+                    digital_output = int.Parse(txt_SaidaD.Text);
+                    analog_input = int.Parse(txt_EntradaA.Text);
+                    analog_output = int.Parse(txt_SaidaA.Text);
+
+                    if (MessageBox.Show($"Deseja Cadastrar a Placa {modelo}?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        var placa_io = new Cadastrar();
+                        placa_io.Placa_IO(fabricante, modelo, config, status, digital_input, digital_output, analog_input, analog_output, familia, User);
+
+                        cmb_fabricante.Text = string.Empty;
+                        txt_Modelo.Text = string.Empty;
+                        txt_Config.Text = string.Empty;
+                        cmb_Status.Text = string.Empty;
+                        txt_EntradaD.Text = string.Empty;
+                        txt_SaidaD.Text = string.Empty;
+                        txt_EntradaA.Text = string.Empty;
+                        txt_SaidaA.Text = string.Empty;
+                        txt_Familia.Text = string.Empty;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao cadastrar!", "Aviso");
+                    Console.WriteLine(ex.Message);
                 }
             }
         }

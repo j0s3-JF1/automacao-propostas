@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConEquip));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_Relatorio = new System.Windows.Forms.Button();
             this.dgv_Consulta = new System.Windows.Forms.DataGridView();
             this.cmb_NumSerie = new System.Windows.Forms.ComboBox();
             this.btn_Consultar = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btn_Relatorio = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Consulta)).BeginInit();
             this.SuspendLayout();
@@ -62,6 +62,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 450);
             this.panel1.TabIndex = 2;
+            // 
+            // btn_Relatorio
+            // 
+            this.btn_Relatorio.Font = new System.Drawing.Font("Century Gothic", 13.25F);
+            this.btn_Relatorio.Location = new System.Drawing.Point(412, 380);
+            this.btn_Relatorio.Name = "btn_Relatorio";
+            this.btn_Relatorio.Size = new System.Drawing.Size(189, 58);
+            this.btn_Relatorio.TabIndex = 138;
+            this.btn_Relatorio.Text = "Gerar Relatório";
+            this.btn_Relatorio.UseVisualStyleBackColor = true;
+            this.btn_Relatorio.Click += new System.EventHandler(this.btn_Relatorio_Click);
             // 
             // dgv_Consulta
             // 
@@ -169,17 +180,6 @@
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Consulte os Equipamentos cadastrados";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btn_Relatorio
-            // 
-            this.btn_Relatorio.Font = new System.Drawing.Font("Century Gothic", 13.25F);
-            this.btn_Relatorio.Location = new System.Drawing.Point(412, 380);
-            this.btn_Relatorio.Name = "btn_Relatorio";
-            this.btn_Relatorio.Size = new System.Drawing.Size(189, 58);
-            this.btn_Relatorio.TabIndex = 138;
-            this.btn_Relatorio.Text = "Gerar Relatório";
-            this.btn_Relatorio.UseVisualStyleBackColor = true;
-            this.btn_Relatorio.Click += new System.EventHandler(this.btn_Relatorio_Click);
             // 
             // FormConEquip
             // 

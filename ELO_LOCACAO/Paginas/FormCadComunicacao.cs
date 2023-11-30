@@ -49,24 +49,33 @@ namespace ELO_LOCACAO.Paginas
             }
             else
             {
-                string fabricante, modelo, protocolo, status, familia;
-
-                fabricante = cmb_Fabricante.Text;
-                modelo = txt_Modelo.Text;
-                protocolo = cmb_Protocolo.Text;
-                status = cmb_Status.Text;
-                familia = txt_Familia.Text;
-
-                if (MessageBox.Show($"Deseja Cadastrar a Placa {modelo}?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                try
                 {
-                    var placa_comunicacao = new Cadastrar();
-                    placa_comunicacao.Placa_Comunicacao(fabricante, modelo, protocolo, status, familia, User);
 
-                    cmb_Fabricante.Text = string.Empty;
-                    txt_Modelo.Text = string.Empty;
-                    cmb_Protocolo.Text = string.Empty;
-                    cmb_Status.Text = string.Empty;
-                    txt_Familia.Text = string.Empty;
+                    string fabricante, modelo, protocolo, status, familia;
+
+                    fabricante = cmb_Fabricante.Text;
+                    modelo = txt_Modelo.Text;
+                    protocolo = cmb_Protocolo.Text;
+                    status = cmb_Status.Text;
+                    familia = txt_Familia.Text;
+
+                    if (MessageBox.Show($"Deseja Cadastrar a Placa {modelo}?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        var placa_comunicacao = new Cadastrar();
+                        placa_comunicacao.Placa_Comunicacao(fabricante, modelo, protocolo, status, familia, User);
+
+                        cmb_Fabricante.Text = string.Empty;
+                        txt_Modelo.Text = string.Empty;
+                        cmb_Protocolo.Text = string.Empty;
+                        cmb_Status.Text = string.Empty;
+                        txt_Familia.Text = string.Empty;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao cadastrar!", "Aviso");
+                    Console.WriteLine(ex.Message);
                 }
             }
         }

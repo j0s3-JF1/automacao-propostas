@@ -1,6 +1,7 @@
 ﻿using ELO_LOCACAO.Classes;
 using ELO_LOCACAO.Classes.Buscas;
 using ELO_LOCACAO.Classes.Relatorio;
+using ELO_LOCACAO.PopUp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,7 +53,9 @@ namespace ELO_LOCACAO.Paginas
 
                     while (!status)
                     {
-                        MessageBox.Show("Gerando Relatório, Aguarde...");
+                        var load = new PopupLoad("Carregando...");
+                        load.Show();
+                        Cursor = Cursors.WaitCursor;
 
                         status = relatorio.GeradorEncoder(dgv_Consulta);
 
@@ -60,6 +63,9 @@ namespace ELO_LOCACAO.Paginas
                         {
                             Thread.Sleep(1000);
                         }
+
+                        load.Close();
+                        Cursor = Cursors.Default;
 
                     }
 

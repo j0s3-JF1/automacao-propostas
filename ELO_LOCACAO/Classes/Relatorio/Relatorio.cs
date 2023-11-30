@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ELO_LOCACAO.Paginas;
+using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +13,8 @@ namespace ELO_LOCACAO.Classes.Relatorio
 {
     internal class Relatorio
     {
+        public static string FilePath;
+
         public bool GeradorEquip(DataGridView dataGridView)
         {
             //Palavra de Status se geração de relatório foi feita ou não;
@@ -69,6 +73,8 @@ namespace ELO_LOCACAO.Classes.Relatorio
                         System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
 
                         MessageBox.Show("Arquivo salvo: " + pastaSelecionada);
+
+                        FilePath = pastaSelecionada;
                     }
                 }
 

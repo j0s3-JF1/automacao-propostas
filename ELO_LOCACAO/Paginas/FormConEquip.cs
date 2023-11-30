@@ -1,17 +1,13 @@
 ﻿using ELO_LOCACAO.Classes;
 using ELO_LOCACAO.Classes.Buscas;
 using ELO_LOCACAO.Classes.Relatorio;
-using ELO_LOCACAO.Conn;
-using MySql.Data.MySqlClient;
+using ELO_LOCACAO.PopUp;
+using OfficeOpenXml;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Drawing.Printing;
+using System.IO;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ELO_LOCACAO.Paginas
@@ -24,6 +20,7 @@ namespace ELO_LOCACAO.Paginas
             var carrega = new Carrega();
             carrega.CarregaFabricante(cmb_Fabricante);
             carrega.CarregaNumSerie(cmb_NumSerie);
+
         }
 
         private void btn_Consultar_Click(object sender, EventArgs e)
@@ -64,7 +61,9 @@ namespace ELO_LOCACAO.Paginas
 
                     while (!status)
                     {
-                        MessageBox.Show("Gerando Relatório, Aguarde...");
+                        var load = new PopupLoad("Carregando...");
+                        load.Show();
+                        Cursor = Cursors.WaitCursor;
 
                         status = relatorio.GeradorEquip(dgv_Consulta);
 
@@ -72,8 +71,10 @@ namespace ELO_LOCACAO.Paginas
                         {
                             Thread.Sleep(1000);
                         }
-                    }
 
+                        load.Close();
+                        Cursor = Cursors.Default;
+                    }
                 }
             }
         }

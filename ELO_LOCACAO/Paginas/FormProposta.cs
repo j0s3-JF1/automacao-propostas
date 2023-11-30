@@ -159,7 +159,10 @@ namespace ELO_LOCACAO.Paginas
                     {
                         while (!geracaoBemSucedida)
                         {
-                            MessageBox.Show("Gerando Proposta, Aguarde...");
+                            var load = new PopupLoad("Carregando...");
+                            load.Show();
+
+                            Cursor = Cursors.WaitCursor;
 
                             geracaoBemSucedida = proposta.EnvioCliente(
                                                         empresa,
@@ -197,6 +200,9 @@ namespace ELO_LOCACAO.Paginas
                             {
                                 Thread.Sleep(1000);
                             }
+
+                            load.Close();
+                            Cursor = Cursors.Default;
                         }
                     }
                 }

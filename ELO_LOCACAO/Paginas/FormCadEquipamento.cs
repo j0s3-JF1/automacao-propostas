@@ -75,86 +75,94 @@ namespace ELO_LOCACAO.Paginas
             }
             else
             {
-                //Declaração de variaveis
-                string numserie, fabricante, modelo, chooper, status, localizacao, cadastrado, entradaD, entradaA, saidaD, saidaA, largura, altura, profundidade, familia;
-
-                numserie = txt_NumSerie.Text;
-                fabricante = cmb_Fabricante.Text;
-                modelo = txt_Modelo.Text;
-                chooper = cmb_Chooper.Text;
-                status = cmb_Status.Text;
-                localizacao = cmb_Localizacao.Text;
-                cadastrado = cmb_Cadastrado.Text;
-                entradaD = txt_EntradaD.Text;
-                saidaD = txt_SaidaD.Text;
-                entradaA = txt_EntradaA.Text;
-                saidaA = txt_SaidaA.Text;
-                largura = txt_Largura.Text;
-                altura = txt_Altura.Text;
-                profundidade = txt_Profundidade.Text;
-                familia = txt_Familia.Text;
-
-
-                int tensaomin, tensaomax;
-
-                tensaomin = int.Parse(txt_TensaoMin.Text);
-                tensaomax = int.Parse(txt_TensaoMax.Text);
-
-                float corrente, potencia;
-
-                corrente = float.Parse(txt_Corrente.Text);
-                potencia = float.Parse(txt_Potencia.Text);
-
-                //Classe para cadastro de equipamento
-                if (MessageBox.Show($"Deseja Cadastrar o Equipamento {modelo}?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                try
                 {
-                    var equipamento = new Cadastrar();
-                    equipamento.Equipamento(
-                        numserie,
-                        fabricante,
-                        modelo,
-                        chooper,
-                        status,
-                        localizacao,
-                        cadastrado,
-                        tensaomin,
-                        tensaomax,
-                        corrente,
-                        potencia
-                        );
+                    //Declaração de variaveis
+                    string numserie, fabricante, modelo, chooper, status, localizacao, cadastrado, entradaD, entradaA, saidaD, saidaA, largura, altura, profundidade, familia;
 
-                    equipamento.Caracteristica(
-                           entradaD,
-                           saidaD,
-                           entradaA,
-                           saidaA,
-                           largura,
-                           altura,
-                           profundidade,
-                           numserie,
-                           familia
-                        );
+                    numserie = txt_NumSerie.Text;
+                    fabricante = cmb_Fabricante.Text;
+                    modelo = txt_Modelo.Text;
+                    chooper = cmb_Chooper.Text;
+                    status = cmb_Status.Text;
+                    localizacao = cmb_Localizacao.Text;
+                    cadastrado = cmb_Cadastrado.Text;
+                    entradaD = txt_EntradaD.Text;
+                    saidaD = txt_SaidaD.Text;
+                    entradaA = txt_EntradaA.Text;
+                    saidaA = txt_SaidaA.Text;
+                    largura = txt_Largura.Text;
+                    altura = txt_Altura.Text;
+                    profundidade = txt_Profundidade.Text;
+                    familia = txt_Familia.Text;
 
-                    //Apagar variaveis após o envio
-                    txt_NumSerie.Text = string.Empty;
-                    cmb_Fabricante.Text = string.Empty;
-                    txt_Modelo.Text = string.Empty;
-                    cmb_Chooper.Text = string.Empty;
-                    cmb_Status.Text = string.Empty;
-                    cmb_Localizacao.Text = string.Empty;
-                    cmb_Cadastrado.Text = string.Empty;
-                    txt_TensaoMin.Text = string.Empty;
-                    txt_TensaoMax.Text = string.Empty;
-                    txt_Corrente.Text = string.Empty;
-                    txt_Potencia.Text = string.Empty;
-                    txt_EntradaA.Text = string.Empty;
-                    txt_EntradaD.Text = string.Empty;
-                    txt_SaidaA.Text = string.Empty;
-                    txt_SaidaD.Text = string.Empty;
-                    txt_Largura.Text = string.Empty;
-                    txt_Altura.Text = string.Empty;
-                    txt_Profundidade.Text = string.Empty;
-                    txt_Familia.Text = string.Empty;
+
+                    int tensaomin, tensaomax;
+
+                    tensaomin = int.Parse(txt_TensaoMin.Text);
+                    tensaomax = int.Parse(txt_TensaoMax.Text);
+
+                    float corrente, potencia;
+
+                    corrente = float.Parse(txt_Corrente.Text);
+                    potencia = float.Parse(txt_Potencia.Text);
+
+                    //Classe para cadastro de equipamento
+                    if (MessageBox.Show($"Deseja Cadastrar o Equipamento {modelo}?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        var equipamento = new Cadastrar();
+                        equipamento.Equipamento(
+                            numserie,
+                            fabricante,
+                            modelo,
+                            chooper,
+                            status,
+                            localizacao,
+                            cadastrado,
+                            tensaomin,
+                            tensaomax,
+                            corrente,
+                            potencia
+                            );
+
+                        equipamento.Caracteristica(
+                               entradaD,
+                               saidaD,
+                               entradaA,
+                               saidaA,
+                               largura,
+                               altura,
+                               profundidade,
+                               numserie,
+                               familia
+                            );
+
+                        //Apagar variaveis após o envio
+                        txt_NumSerie.Text = string.Empty;
+                        cmb_Fabricante.Text = string.Empty;
+                        txt_Modelo.Text = string.Empty;
+                        cmb_Chooper.Text = string.Empty;
+                        cmb_Status.Text = string.Empty;
+                        cmb_Localizacao.Text = string.Empty;
+                        cmb_Cadastrado.Text = string.Empty;
+                        txt_TensaoMin.Text = string.Empty;
+                        txt_TensaoMax.Text = string.Empty;
+                        txt_Corrente.Text = string.Empty;
+                        txt_Potencia.Text = string.Empty;
+                        txt_EntradaA.Text = string.Empty;
+                        txt_EntradaD.Text = string.Empty;
+                        txt_SaidaA.Text = string.Empty;
+                        txt_SaidaD.Text = string.Empty;
+                        txt_Largura.Text = string.Empty;
+                        txt_Altura.Text = string.Empty;
+                        txt_Profundidade.Text = string.Empty;
+                        txt_Familia.Text = string.Empty;
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Erro ao cadastrar!", "Aviso");
+                    Console.WriteLine(ex.Message);
                 }
             }
         }
