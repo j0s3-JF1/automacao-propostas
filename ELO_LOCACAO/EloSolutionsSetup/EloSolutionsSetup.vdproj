@@ -309,14 +309,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_DFE2995B95F970332C77E94BAC7B02EF"
-        "OwnerKey" = "8:_F998D7090F834C74ADD7547D81D73E03"
+        "MsmKey" = "8:_D4AD4C1AD12047B18055F6FC2B93787F"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_E27A0E12B56D4800BFC29F8B8B11D0D4"
-        "OwnerKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_DFE2995B95F970332C77E94BAC7B02EF"
+        "OwnerKey" = "8:_F998D7090F834C74ADD7547D81D73E03"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1215,6 +1215,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D4AD4C1AD12047B18055F6FC2B93787F"
+            {
+            "SourcePath" = "8:O:\\Comum\\---ELO SOLUTIONS SISTEMA---\\INSTALLER\\V1\\document.docx"
+            "TargetName" = "8:document.docx"
+            "Tag" = "8:"
+            "Folder" = "8:_55017FF994AF4980A40E84839945AA57"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DFE2995B95F970332C77E94BAC7B02EF"
             {
             "AssemblyRegister" = "3:1"
@@ -1244,26 +1264,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E27A0E12B56D4800BFC29F8B8B11D0D4"
-            {
-            "SourcePath" = "8:..\\..\\..\\..\\..\\document.docx"
-            "TargetName" = "8:document.docx"
-            "Tag" = "8:"
-            "Folder" = "8:_55017FF994AF4980A40E84839945AA57"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_EA0C2A1EFBE96750B1633C31CA4EFEB3"

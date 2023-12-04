@@ -381,7 +381,7 @@ namespace ELO_LOCACAO.Classes
                 chooper.Text = reader[6].ToString();
                 status.Text = reader[7].ToString();
                 localizacao.Text = reader[8].ToString();
-                cadastrado.Text = reader[9].ToString();
+                //cadastrado.Text = reader[9].ToString();
                 entradaD.Text = reader[10].ToString();
                 saidaD.Text = reader[11].ToString();
                 entradaA.Text = reader[12].ToString();

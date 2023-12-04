@@ -720,9 +720,7 @@ namespace ELO_LOCACAO.Classes.Proposta
 
                     try
                     {
-                        //string save = $@"O:\Departamentos\Marketing\Compartilhado\TESTE LOCAÇÃO\2023 Propostas\{Proposta}.docx";
-                        //string save = $@"C:\Users\Public\{Proposta}.docx";
-                        string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
+                        string save = $@"\\srv-elo1\Documentos\Departamentos\Vendas\Propostas\{anoAtual} Propostas\#Propostas de Locação - ELO RECUPERADORA\{Proposta}.docx";
                         ObjDoc.SaveAs2(save);
 
                         ObjDoc.Close();
@@ -737,9 +735,7 @@ namespace ELO_LOCACAO.Classes.Proposta
                     {
                         try
                         {
-                            //string save = $@"O:\Departamentos\Marketing\Compartilhado\TESTE LOCAÇÃO\2023 Propostas\{Proposta}.docx";
                             string save = $@"C:\Users\Public\{Proposta}.docx";
-                            //string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
                             ObjDoc.SaveAs2(save);
 
                             ObjDoc.Close();
@@ -937,9 +933,7 @@ namespace ELO_LOCACAO.Classes.Proposta
 
                     try
                     {
-                        //string save = $@"O:\Departamentos\Marketing\Compartilhado\TESTE LOCAÇÃO\2023 Propostas\{Proposta}.docx";
-                        //string save = $@"C:\Users\Public\{Proposta}.docx";
-                        string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
+                        string save = $@"\\srv-elo1\Documentos\Departamentos\Vendas\Propostas\{anoAtual} Propostas\#Propostas de Locação\{Proposta}.docx";
                         ObjDoc.SaveAs2(save);
 
                         ObjDoc.Close();
@@ -954,9 +948,7 @@ namespace ELO_LOCACAO.Classes.Proposta
                     {
                         try
                         {
-                            //string save = $@"O:\Departamentos\Marketing\Compartilhado\TESTE LOCAÇÃO\2023 Propostas\{Proposta}.docx";
                             string save = $@"C:\Users\Public\{Proposta}.docx";
-                            //string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
                             ObjDoc.SaveAs2(save);
 
                             ObjDoc.Close();
