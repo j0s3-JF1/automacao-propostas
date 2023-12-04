@@ -718,17 +718,48 @@ namespace ELO_LOCACAO.Classes.Proposta
                     //Ano do PC
                     int anoAtual = DateTime.Now.Year;
 
-                    string save = $@"C:\Users\Public\{Proposta}.docx";
-                    //string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
-                    ObjDoc.SaveAs2(save);
+                    try
+                    {
+                        //string save = $@"O:\Departamentos\Marketing\Compartilhado\TESTE LOCAÇÃO\2023 Propostas\{Proposta}.docx";
+                        //string save = $@"C:\Users\Public\{Proposta}.docx";
+                        string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
+                        ObjDoc.SaveAs2(save);
 
-                    ObjDoc.Close();
-                    Marshal.ReleaseComObject(ObjDoc);
+                        ObjDoc.Close();
+                        Marshal.ReleaseComObject(ObjDoc);
 
-                    ObjWord.Quit();
-                    Marshal.ReleaseComObject(ObjWord);
+                        ObjWord.Quit();
+                        Marshal.ReleaseComObject(ObjWord);
 
-                    MessageBox.Show($"Arquivo Salvo: {save}", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show($"Arquivo Salvo: {save}", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (Exception ex)
+                    {
+                        try
+                        {
+                            //string save = $@"O:\Departamentos\Marketing\Compartilhado\TESTE LOCAÇÃO\2023 Propostas\{Proposta}.docx";
+                            string save = $@"C:\Users\Public\{Proposta}.docx";
+                            //string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
+                            ObjDoc.SaveAs2(save);
+
+                            ObjDoc.Close();
+                            Marshal.ReleaseComObject(ObjDoc);
+
+                            ObjWord.Quit();
+                            Marshal.ReleaseComObject(ObjWord);
+
+                            MessageBox.Show($"Arquivo Salvo: {save}", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        catch(Exception exSecundary)
+                        {
+                            MessageBox.Show("Erro ao Salvar Proposta no caminho Secundario");
+                            MessageBox.Show(exSecundary.Message);
+                        }
+
+                        MessageBox.Show("Erro ao Salvar Proposta no caminho Original");
+                        MessageBox.Show(ex.Message);
+
+                    }
 
                 }
                 /*
@@ -904,17 +935,48 @@ namespace ELO_LOCACAO.Classes.Proposta
                     //Ano do PC
                     int anoAtual = DateTime.Now.Year;
 
-                    string save = $@"C:\Users\Public\{Proposta}.docx";
-                    //string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
-                    ObjDoc.SaveAs2(save);
+                    try
+                    {
+                        //string save = $@"O:\Departamentos\Marketing\Compartilhado\TESTE LOCAÇÃO\2023 Propostas\{Proposta}.docx";
+                        //string save = $@"C:\Users\Public\{Proposta}.docx";
+                        string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
+                        ObjDoc.SaveAs2(save);
 
-                    ObjDoc.Close();
-                    Marshal.ReleaseComObject(ObjDoc);
+                        ObjDoc.Close();
+                        Marshal.ReleaseComObject(ObjDoc);
 
-                    ObjWord.Quit();
-                    Marshal.ReleaseComObject(ObjWord);
+                        ObjWord.Quit();
+                        Marshal.ReleaseComObject(ObjWord);
 
-                    MessageBox.Show($"Arquivo Salvo: {save}", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show($"Arquivo Salvo: {save}", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    catch (Exception ex)
+                    {
+                        try
+                        {
+                            //string save = $@"O:\Departamentos\Marketing\Compartilhado\TESTE LOCAÇÃO\2023 Propostas\{Proposta}.docx";
+                            string save = $@"C:\Users\Public\{Proposta}.docx";
+                            //string save = $@"O:\Departamentos\Vendas\Propostas\{anoAtual} Propostas\{Proposta}.docx";
+                            ObjDoc.SaveAs2(save);
+
+                            ObjDoc.Close();
+                            Marshal.ReleaseComObject(ObjDoc);
+
+                            ObjWord.Quit();
+                            Marshal.ReleaseComObject(ObjWord);
+
+                            MessageBox.Show($"Arquivo Salvo: {save}", "Salvo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                        catch (Exception exSecundary)
+                        {
+                            MessageBox.Show("Erro ao Salvar Proposta no caminho Secundario");
+                            MessageBox.Show(exSecundary.Message);
+                        }
+
+                        MessageBox.Show("Erro ao Salvar Proposta no caminho Original");
+                        MessageBox.Show(ex.Message);
+
+                    }
 
                 }
 

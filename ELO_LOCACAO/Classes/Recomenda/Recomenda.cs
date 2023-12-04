@@ -955,16 +955,16 @@ namespace ELO_LOCACAO.Classes.Proposta
                 {
                     if (check[0] < dimensao[0] || check[1] < dimensao[1] || check[2] < dimensao[2])
                     {
-                        MessageBox.Show($"O Equipamento: {modelo.Text} atende ao dimensionamento especificado!", "Dimensão");
-                        obs4.Text = "";
-                    }
-                    else
-                    {
                         MessageBox.Show($"O Equipamento: {modelo.Text} não atende ao dimensionamento especificado!", "Dimensão");
 
                         obs4.Text = $@"Conforme Check-List do Cliente, existe uma limitação de espaço de: 
 Largura: {check[0]}mm | Altura: {check[1]}mm | Profundidade: {check[0]}mm (Espaço do Cliente)
 Largura: {dimensao[0]}mm | Altura: {dimensao[1]}mm | Profundidade: {dimensao[2]}mm (Equipamento)";
+                    }
+                    else
+                    {
+                        MessageBox.Show($"O Equipamento: {modelo.Text} atende ao dimensionamento especificado!", "Dimensão");
+                        obs4.Text = "";
                     }
                 }
             }

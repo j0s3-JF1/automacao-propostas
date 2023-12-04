@@ -51,24 +51,33 @@ namespace ELO_LOCACAO.Paginas
 
         private void btn_Preencher_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(cmb_ID.Text);
-            var proposta = new Check();
-            var recomenda = new Recomenda();
-            proposta.ConsultaCheckList(id,
-             txt_Cliente,
-             txt_Empresa,
-             txt_cnpj,
-             txt_Endereco,
-             txt_Email,
-             txt_Telefone,
-             txt_Fone,
-             txt_Tensao,
-             txt_Potencia,
-             txt_Dia,
-             txt_Unidade
-            );
+            try
+            {
 
-            recomenda.Equipamento(id, cmb_Equipamento, dgv_recomenda);
+                int id = int.Parse(cmb_ID.Text);
+                var proposta = new Check();
+                var recomenda = new Recomenda();
+                proposta.ConsultaCheckList(id,
+                 txt_Cliente,
+                 txt_Empresa,
+                 txt_cnpj,
+                 txt_Endereco,
+                 txt_Email,
+                 txt_Telefone,
+                 txt_Fone,
+                 txt_Tensao,
+                 txt_Potencia,
+                 txt_Dia,
+                 txt_Unidade
+                );
+
+                recomenda.Equipamento(id, cmb_Equipamento, dgv_recomenda);
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Erro ao Preencher!", "Aviso");
+                Console.WriteLine(ex.Message);  
+            }
         }
 
         private void btn_Info_Click(object sender, EventArgs e)
